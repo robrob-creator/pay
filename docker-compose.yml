@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+  kyogojo-web:
+    platform: linux/amd64
+    image: ${DOCKER_REGISTRY-}kyogojo-web:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - APP_PORT=":5000"
